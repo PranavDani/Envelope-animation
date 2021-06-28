@@ -1,0 +1,71 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.mail {
+  width: 700px;
+  height: 400px;
+  position: relative;
+  background-color: #c6c2be;
+  transform-style: preserve-3d;
+  perspective: 700px;
+}
+
+.mail:before {
+  content: "";
+  position: absolute;
+  border-left: 350px solid #878782;
+  border-right: 350px solid #878782;
+  border-top: 200px solid transparent;
+  border-bottom: 200px solid #94938f;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.mail:after {
+  content: "";
+  position: absolute;
+  border-left: 350px solid transparent;
+  border-right: 350px solid transparent;
+  border-top: 150px solid transparent;
+  border-bottom: 250px solid #94938f;
+  z-index: 7;
+  cursor: pointer;
+}
+
+.mail .cover {
+  position: absolute;
+  border-left: 350px solid transparent;
+  border-right: 350px solid transparent;
+  border-top: 200px solid #b9b4ae;
+  border-bottom: 200px solid transparent;
+  transform-origin: top;
+  transition: 1s 1s ease;
+  z-index: 8;
+}
+
+.mail:hover .cover {
+  transform: rotateX(180deg);
+  transition: 1s ease;
+}
+
+.mail .image {
+  position: absolute;
+  width: 680px;
+  left: 10px;
+  height: 390px;
+  top: 10px;
+  background-color: red;
+  background-image: url("sample.jpg");
+  background-size: cover;
+  background-position: center center;
+  transition: 1s ease;
+}
+
+.mail:hover .image {
+  top: -150px;
+  transition: 1s 1s ease;
+}
